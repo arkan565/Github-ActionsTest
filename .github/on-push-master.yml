@@ -1,0 +1,22 @@
+name: Vps-push code
+on:
+  push:
+  branches:
+    - "main"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      - run: npm install
+      - run: npm start
+  pushCode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: ssh ${{secrets.username}}@${{secrets.ip}}
+      - run: ${{secrets.password}}
+      - run: touch foo.bar
