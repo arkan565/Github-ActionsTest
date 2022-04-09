@@ -17,7 +17,6 @@ jobs:
         with:
           key: ${{ secrets.SSHRSA }}
           known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
-      - run: ssh-keygen -R ${{secrets.ip}}
       - run: ssh -tt ${{secrets.username}}@${{secrets.ip}}
       - run: ${{secrets.password}}
       - run: touch foo.bar
