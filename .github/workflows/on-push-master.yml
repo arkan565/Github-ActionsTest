@@ -17,6 +17,7 @@ jobs:
         with:
           key: ${{ secrets.SSHRSA }}
           known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
-      - run: ssh -tt ${{secrets.username}}@${{secrets.ip}}
+      - run: ssh-keyscan -H ${{secrets.ip}} >> ~/.ssh/known_hosts
+      - run: ssh ${{secrets.username}}@${{secrets.ip}}
       - run: ${{secrets.password}}
       - run: touch foo.bar
