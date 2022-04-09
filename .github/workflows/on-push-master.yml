@@ -1,5 +1,8 @@
 name: Vps-push code
-on: [push]
+on: 
+  push:
+    branches:
+      - 'main'
 jobs:
   build:
     runs-on: ubuntu-latest
