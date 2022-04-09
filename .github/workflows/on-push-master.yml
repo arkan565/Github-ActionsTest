@@ -14,6 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: ssh -t ${{secrets.username}}@${{secrets.ip}}
+      - run: ssh -tt ${{secrets.username}}@${{secrets.ip}}
       - run: ${{secrets.password}}
       - run: touch foo.bar
