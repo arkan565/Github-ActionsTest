@@ -5,7 +5,7 @@ describe("/test endpoint", () => {
     it("should return a response", async () => {
         const response = await request.get("/")
         expect(response.status).toBe(200)
-        expect(response.text).toBe("Hello, World!");
+        expect(response.text).toBe("Hola, a todos, lagooners!");
     })
     afterAll((done) => {
       app.close()
