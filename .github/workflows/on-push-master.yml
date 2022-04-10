@@ -14,7 +14,7 @@ jobs:
       - run: npm install
       - run: npm test
   pushCode:
-    needs: verify
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: shimataro/ssh-key-action@v2
